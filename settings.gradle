@@ -1,0 +1,13 @@
+rootProject.name = 'telegram-support-library'
+
+include(
+        "subprojects/reply",
+        "subprojects/handling"
+)
+
+rootProject.children.forEach {
+    project ->
+        String name = project.projectDir.name
+        project.name = name
+        project.buildFileName = "build.gradle"
+}
